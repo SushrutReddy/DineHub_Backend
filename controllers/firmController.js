@@ -1,6 +1,7 @@
 const Firm = require('../models/Firm');
 const Vendor = require('../models/Vendor');
 const multer = require('multer');
+const path = require('path');
 
 
 // Configure storage engine for multer
@@ -57,5 +58,5 @@ const deleteFirmById = async (req,res)=>{
         res.status(500).json("Internal Server Error");  
     }
 }
-//syntax of exporting when we have images also
+//syntax of exporting when we have images
 module.exports = {addFirm: [upload.single('image'), addFirm] , deleteFirmById};
